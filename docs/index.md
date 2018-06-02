@@ -1,6 +1,8 @@
 
 # Home
 
+## [Ride Hailing Whitepaper](whitepaper/index.md)
+
 This content is under construction
 
 > @todo flesh out site organization
