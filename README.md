@@ -1,2 +1,3 @@
 # Moov-Ride-Hailing
-Documentation on the Moov open ride hailing protocol
+
+@todo a more descriptive README, perhaps similar content as index.md
