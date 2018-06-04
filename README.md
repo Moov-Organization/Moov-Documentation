@@ -1,3 +1,5 @@
-# Moov-Ride-Hailing
+# Moov-Documentation
 
-@todo a more descriptive README, perhaps similar content as index.md
+Repository for all Moov documentation (white papers, development plans, etc.)
+
+See the [documentation site](https://moov-organization.github.io/Moov-Documentation/) for more information.
