@@ -13,7 +13,7 @@ To contribute to this code base, fork the repository, make local changes, and [c
 
 **For editing this documentation**
 
-This site is written as a collection of Markdown documents for ease of reading and rendering. Before creating pull requests which will modify documentation, it is recommended to preview the pages in a Markdown engine. If you are using the [Atom IDE](https://atom.io/), the [Markdown Preview Enhanced](https://atom.io/packages/markdown-preview-enhanced) package is recommended for in-editor Markdown rendering.
+This site is written as a collection of [Github-flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) documents for ease of reading and rendering. Before creating pull requests which will modify documentation, it is recommended to preview the pages in a Markdown engine. If you are using the [Atom IDE](https://atom.io/), the [Markdown Preview Enhanced](https://atom.io/packages/markdown-preview-enhanced) package is recommended for in-editor Markdown rendering.
 
 **For editing source code**
 
