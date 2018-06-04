@@ -17,4 +17,4 @@ This site is written as a collection of [Github-flavored Markdown](https://githu
 
 **For editing source code**
 
-The services are implemented independent of each other. A locally-hosted sandbox will be available at a future time for full integration testing.
+The services are implemented independent of each other. A locally-hosted sandbox will be available at a future time for full integration testing. Unit tests for the example services will be based on the protocol specification.
