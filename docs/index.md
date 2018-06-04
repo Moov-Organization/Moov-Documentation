@@ -1,20 +1,14 @@
 
 # Home
 
-This is the home page for the Moov Ride Hailing protocol.
+This is the home page for all Moov documentation.
 
-Details about the protocol can be found in the [Ride Hailing Whitepaper](whitepaper/index.md)
+Details about the open ride hailing protocol can be found in the [Ride Hailing Whitepaper](whitepaper/index.md)
+
+> @todo merberich add links for mission statement, autonomous vehicle stack whitepaper, development plan.
 
 > This content is currently under construction.
 
-The Moov Ride Hailing protocol documentation site is currently hosted via Github pages. Both documentation of the protocol and example source code for the services is publicly available as [Free Open Source Software (FOSS)](https://en.wikipedia.org/wiki/Free_and_open-source_software) under the [GPLv3 License](https://www.gnu.org/licenses/gpl-3.0.en.html) as a Git repository, also viewable on the [Moov Ride Hailing Github page](https://github.com/Moov-Organization/Moov-Ride-Hailing).
-
-To contribute to this code base, fork the repository, make local changes, and [create a pull request via Github](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
-
-**For editing this documentation**
+The Moov documentation site is currently hosted via Github pages. All documentation is publicly available as a Git repository, viewable on the [Moov Documentation Github page](https://github.com/Moov-Organization/Moov-Documentation). To contribute to this documentation, fork the repository, make local changes, and [create a pull request via Github](https://help.github.com/articles/creating-a-pull-request-from-a-fork/). Alternatively, open an issue for any problems or inconsistencies.
 
 This site is written as a collection of [Github-flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) documents for ease of reading and rendering. Before creating pull requests which will modify documentation, it is recommended to preview the pages in a Markdown engine. If you are using the [Atom IDE](https://atom.io/), the [Markdown Preview Enhanced](https://atom.io/packages/markdown-preview-enhanced) package is recommended for in-editor Markdown rendering.
-
-**For editing source code**
-
-The services are implemented independent of each other. A locally-hosted sandbox will be available at a future time for full integration testing. Unit tests for the example services will be based on the protocol specification.

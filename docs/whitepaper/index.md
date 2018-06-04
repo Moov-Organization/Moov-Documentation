@@ -4,6 +4,8 @@
 > @todo merberich
 > I think this content deserves a hard edit before it goes live. For now, this is just a copy of the documentation as it exists on Google Drive.
 
+> This documentation is not finalized and may undergo significant rework.
+
 ## Introduction
 In yesterday’s world there were individual taxi services that coordinated rides between riders and taxi drivers. In today’s world we have Uber and Lyft, who have fully automated ride coordination but as an unfortunate consequence own the entire marketplace. Though people are paying significantly less today than they were with yesterday’s slower taxi services, this oligopolization will allow Uber and Lyft to charge artificially high brokerage margins and not prioritize user satisfaction or new innovations.
 
