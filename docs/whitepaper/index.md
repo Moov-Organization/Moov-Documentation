@@ -6,8 +6,49 @@
 
 > This documentation is not finalized and may undergo significant rework.
 
-## Introduction
-In yesterday’s world there were individual taxi services that coordinated rides between riders and taxi drivers. In today’s world we have Uber and Lyft, who have fully automated ride coordination but as an unfortunate consequence own the entire marketplace. Though people are paying significantly less today than they were with yesterday’s slower taxi services, this oligopolization will allow Uber and Lyft to charge artificially high brokerage margins and not prioritize user satisfaction or new innovations.
+## Introduction: A History of Transportation
+
+> @todo is 'history' the right word here (in title)?
+
+Transportation is essential to modern living.
+
+> @todo formulate these points into a cohesive intro
+- personal transportation
+  - expensive: vehicle cost, insurance, fuel, maintenance
+  - inefficient for most cases: sits in parking lot, high downtime, takes up space
+- public transportation
+  - improved space efficiency, only inactive after servce time is up
+  - typically improves cost efficiency if a ride plan is purchased
+  - fixed routes along centralized paths, no way to connect fringe locations
+  - strict timing means planning around transportation, rather than the other way around
+- taxi services
+  - resolves time efficiency by providing transportation-on-demand
+  - often expensive
+  - hard to break in to the market, monopolies/oligopolies form
+- user-owned manned fleets
+  - easier to enter market as a provider
+  - retain space and time efficiency of transportation service model
+  - suffer from lack of unified information system
+- ride hailing systems (Uber + Lyft + Waymo)
+  - retain space and time efficiency of transportation service model
+  -
+- public-owned autonomous fleets
+
+Overall, review benefits of [Transportation as a Service](https://en.wikipedia.org/wiki/Transportation_as_a_Service) model, then transition into:
+
+> @todo the statement below require heavy citation of sources incidating increasing autonomous vehicle saturation of roads
+
+... Specifically, we worry that in transitioning from Uber and Lyft's user-owned but centrally-stewarded TaaS to a TaaS operated by autonomous fleets, public vehicle providers lose the ability to compete in the market. With a select few companies owning larger and larger percentages of vehicles on the road, this could result in an oligopoly.
+
+> @todo follownig par needs revision; succinct and unambiguous description of proposal
+
+However, a more ideal form of transportation system ownership may logically exist beyond today's current ride-hailing system, which would be able to seamlessly evolve into a publicly-owned autonomous fleet system. We propose a decentralized, public-stake ride-hailing and car ownership system. To understand the nuances of this proposed system, we must break down what today's ride-hailing services provide.
+
+~~In yesterday’s world there were individual taxi services that coordinated rides between riders and taxi drivers. In today’s world we have Uber and Lyft, who have fully automated ride coordination but as an unfortunate consequence own the entire marketplace. Though people are paying significantly less today than they were with yesterday’s slower taxi services, this oligopolization will allow Uber and Lyft to charge artificially high brokerage margins and not prioritize user satisfaction or new innovations.~~
+
+## Background: Services Supporting Transportation
+
+> @todo rephrase, but basically this
 
 To dissolve this oligopoly, it is necessary to understand the different parts to Uber and Lyft. The main services offered can be listed as follows:
 - Driver Identity checks and Vehicle Inspections.
@@ -18,12 +59,18 @@ To dissolve this oligopoly, it is necessary to understand the different parts to
 - Payment processing and escrow.
 - Handling disputes and rider/driver reputation.
 
-All these different services can be seen as part of a vertical, that is they are individual services dependent on each other to deliver the final ride hailing service. However it is not necessary that one entity provides all the services but by doing so the entity establishes a vertical monopoly. In an alternative scenario, if there were multiple providers in each horizontal and they competed against each other to provide their particular service at the cheapest price to their adjacent horizontals, it would be less of a monopoly. And perhaps as a consequence of tighter competition the cost of the final service maybe a lot cheaper. Is it possible to realize such a system without having to add more complexity to the life of the end user?
+~~All these different services can be seen as part of a vertical, that is they are individual services dependent on each other to deliver the final ride hailing service. However it is not necessary that one entity provides all the services but by doing so the entity establishes a vertical monopoly. In an alternative scenario, if there were multiple providers in each horizontal and they competed against each other to provide their particular service at the cheapest price to their adjacent horizontals, it would be less of a monopoly. And perhaps as a consequence of tighter competition the cost of the final service maybe a lot cheaper. Is it possible to realize such a system without having to add more complexity to the life of the end user?~~
 
-We predict that in the future Uber and Lyft will be dismantled into smaller entities that will specialize in each of the services. Not only will such a change reduce number of single point of failures and strengthen the ride hailing ecosystem as a whole, the resulting tight competition will ensure that the cost of ride hailing will reduce even more over time. We want to devise an open communication protocol leveraging smart contracts to standardize the communication between these different entities. Thus reducing the need for centralization or the middle man who would charge an exorbitant amount to coordinate the actions of the various entities.
+> @todo this is wishful thinking written; instead explain how a natural evolution could happen based on intro
 
-## History
-> @todo this is a new section entirely
+~~We predict that in the future Uber and Lyft will be dismantled into smaller entities that will specialize in each of the services. Not only will such a change reduce number of single point of failures and strengthen the ride hailing ecosystem as a whole, the resulting tight competition will ensure that the cost of ride hailing will reduce even more over time. We want to devise an open communication protocol leveraging smart contracts to standardize the communication between these different entities. Thus reducing the need for centralization or the middle man who would charge an exorbitant amount to coordinate the actions of the various entities.~~
+
+> @todo continue editing below this line:
+> - design decisions could use trimming
+> - reduce size of images, use XML-generated images from something like draw.io
+> - revise v1.0 for service-oriented descriptions and make sure new system jives
+> - consider removing sections below v1.0 section; extraneous or should be moved to business/values doc
+----
 
 ## Design Decisions Background
 
