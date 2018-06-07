@@ -74,6 +74,12 @@ To dissolve this oligopoly, it is necessary to understand the different parts to
 
 > - cut down on content in v0.1-0.4 and move info to rebuttals section(s)
 > - provide user-friendly blog as intro to tech, hand-holding
+> - v1.0 section should list:
+>   - definitions of service provider entities
+>   - operation chain of the protocol at large
+>   - definitions of message formats for all external interfaces (to user/driver and blockchain)
+>   - optionally, message formats for internal systems as well
+>   - analysis of performance
 > - provide counterarg + rebuttal after v1.0 proposal section
 ----
 
