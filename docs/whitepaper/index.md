@@ -6,9 +6,7 @@
 
 > This documentation is not finalized and may undergo significant rework.
 
-## Introduction: A History of Transportation
-
-> @todo is 'history' the right word here (in title)?
+## Introduction: An Overview of Transportation
 
 Transportation is essential to modern living.
 
@@ -31,8 +29,11 @@ Transportation is essential to modern living.
   - suffer from lack of unified information system
 - ride hailing systems (Uber + Lyft + Waymo)
   - retain space and time efficiency of transportation service model
-  -
-- public-owned autonomous fleets
+  - users cannot set their own rates
+  - with development of autonomous vehicles, human drivers will be replaced
+  - oligopoly on best performing fleet
+- public distributed ride hailing system with user-owned manned fleets
+- public distributed ride hailing system with autonomous fleets
 
 Overall, review benefits of [Transportation as a Service](https://en.wikipedia.org/wiki/Transportation_as_a_Service) model, then transition into:
 
@@ -70,6 +71,10 @@ To dissolve this oligopoly, it is necessary to understand the different parts to
 > - reduce size of images, use XML-generated images from something like draw.io
 > - revise v1.0 for service-oriented descriptions and make sure new system jives
 > - consider removing sections below v1.0 section; extraneous or should be moved to business/values doc
+
+> - cut down on content in v0.1-0.4 and move info to rebuttals section(s)
+> - provide user-friendly blog as intro to tech, hand-holding
+> - provide counterarg + rebuttal after v1.0 proposal section
 ----
 
 ## Design Decisions Background
