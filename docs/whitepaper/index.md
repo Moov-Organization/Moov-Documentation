@@ -15,38 +15,43 @@ Public transportation is one expression of TaaS which greatly improves on the sp
 
 Taxi services are another alternative. Taxis retain transportation-on-demand, but are often relatively expensive solutions that are designed for single, infrequent trips. In addition, taxi services often have [local monopolies due to regulation](https://www.cagw.org/thewastewatcher/and-medallion-goes-%E2%80%A6-taxicab-monopoly) which drives up the difficulty of breaking into the market as a new driver or service provider. Therefore drivers cannot set their own rates, and are at the whim of the singular stewarding company.
 
-The most recent addition to available transportation methods are the "rideshare" services, most notably Lyft and Uber. These services perform very similarly to taxi services, however they also provide a set of other integrated services including ride-hailing and tracking, and electronic payment via phone apps (we will refer to this set of services simply as the ride hailing stack). The primary advantage of these providers is ease of interfacing - all relevant information is bundled into once place. However, like the taxi services, drivers employed by these centralized services cannot set their own rates, and are reliant on the ride hailing stack offered by the steward companies. This means that drivers and riders alike are still potentially subject to oligopolistic conditions in the long term using this transportation method. In addition, these technologies do not exist in a vacuum; with the advent and rising popularity of autonomous vehicles, it is likely that rideshare companies will eventually move to automated fleets, further building conditions making market entry difficult.
+The most recent addition to available transportation methods are the "ride hailing" services, most notably Lyft and Uber. These services perform very similarly to taxi services, however they also provide a set of other integrated services including ride hailing and tracking, and electronic payment via phone apps (we will refer to this set of services simply as the ride hailing stack). The primary advantage of these providers is ease of interfacing - all relevant information is bundled into once place. However, like the taxi services, drivers employed by these centralized services cannot set their own rates, and are reliant on the ride hailing stack offered by the steward companies. This means that drivers and riders alike are still potentially subject to oligopolistic conditions in the long term using this transportation method. In addition, these technologies do not exist in a vacuum; with the advent and rising popularity of autonomous vehicles, it is likely that ride hailing companies will eventually move to automated fleets, further building conditions making market entry difficult.
 
 We believe that a more ideal transportation solution can be found, which combines the best features of all of the noted observed methods.
 
-## Proposed Idea
+## Proposal of Improvements
 
-We propose a decentralized, public-stake ride hailing system with user-owned manned fleets.
+We propose a decentralized public-stake ride hailing system with user-owned manned fleets.
 
-> @todo list properties of this system that make it beneficial
+To understand the functionality of this proposed system, we must break down what today's ride hailing services provide. All ride hailing providers offer a core seven services:
+- Matchmaking for connecting riders to drivers
+- Recommended price estimation
+- Price negotiation
+- Payment processing and escrow
+- Dispute-handling for riders or drivers that break contract
+- Driver and vehicle registration and verification
 
-The system envisioned should also be able to naturally transition to a fleet of autonomous vehicles, but these vehicles should still be either user-owned or publicly-owned (municipal), and thus public stake in the system is maintained.
+At minimum, the proposed system must be able to provide all of these services with the ease of access that current ride hailing systems have.
 
-To understand the nuances of this proposed system, we must break down what today's ride-hailing services provide.
+Current ride hailing providers combine all of these services into a single closed-source vertical market, which has the side-effect of increasing barriers to entry to market, and therefore encouraging oligopolies. However, it is not necessary that a single entity provides all of the constituent services. In an alternate scenario, a horizontal market could be established by opening up the interfaces between these services so that new parties could provide each service individually. Engendering a horizontal market also innately encourages competition; since the services are no longer bundled into a single vertical market, services can be developed individually, and therefore with less upfront cost.
 
-> @todo rephrase, but basically this
+Under this proposed system, if an individual is dissatisfied with their existing service provider, they can switch providers or start their own service provider entity. In today's market, setting up a new service provider would be prohibitively difficult - it would be necessary to provide the entire stack of services with similar performance to existing services.
 
-To dissolve this oligopoly, it is necessary to understand the different parts to Uber and Lyft. The main services offered can be listed as follows:
-- Driver Identity checks and Vehicle Inspections.
-- Public facing servers for users and drivers to connect with each other.
-- Phone apps for drivers and riders to communicate with servers.
-- Software to match drivers and riders and perform price point negotiation.
-- Software to decide the cost of a ride.
-- Payment processing and escrow.
-- Handling disputes and rider/driver reputation.
+Flattening the market may also reduce the cost of the final service, since competition typically drives down prices.
 
-> @todo use bits of the following par to describe how the new system addresses oligopoly formation
+Decentralizing the system ensures that there is no single point of failure which could cause the system to become unavailable simultaneously.
 
-~~All these different services can be seen as part of a vertical, that is they are individual services dependent on each other to deliver the final ride hailing service. However it is not necessary that one entity provides all the services but by doing so the entity establishes a vertical monopoly. In an alternative scenario, if there were multiple providers in each horizontal and they competed against each other to provide their particular service at the cheapest price to their adjacent horizontals, it would be less of a monopoly. And perhaps as a consequence of tighter competition the cost of the final service maybe a lot cheaper. Is it possible to realize such a system without having to add more complexity to the life of the end user?~~
+The system envisioned should also be adaptable to new technologies; specifically, it should be able to naturally transition to a fleet of autonomous vehicles when adoption of the technology is more widespread. However, these vehicles should still be either user-owned or publicly-owned (municipal) in order to maintain public stake in the system.
 
-> @todo this is wishful thinking written; instead explain how a natural evolution could happen based on intro
+Lastly, the system should not force any significant additional complexity on the end users - riders and drivers.
 
-~~We predict that in the future Uber and Lyft will be dismantled into smaller entities that will specialize in each of the services. Not only will such a change reduce number of single point of failures and strengthen the ride hailing ecosystem as a whole, the resulting tight competition will ensure that the cost of ride hailing will reduce even more over time. We want to devise an open communication protocol leveraging smart contracts to standardize the communication between these different entities. Thus reducing the need for centralization or the middle man who would charge an exorbitant amount to coordinate the actions of the various entities.~~
+With these qualities in mind, we can specify a protocol which would meet these system demands.
+
+## Moov Ride Hailing System Specification (v0.1)
+
+### Architecture
+
+> @todo write me based on the "v1.0" section below
 
 ----
 > @todo continue editing below this line:
@@ -57,7 +62,6 @@ To dissolve this oligopoly, it is necessary to understand the different parts to
 
 > - cut down on content in v0.1-0.4 and move info to rebuttals section(s)
 > - provide user-friendly blog as intro to tech, hand-holding
-> - rename v1.0 section: Moov Ride Hailing System Specification v1.0
 > - v1.0 section should list:
 >   - definitions of service provider entities
 >   - operation chain of the protocol at large
@@ -66,7 +70,8 @@ To dissolve this oligopoly, it is necessary to understand the different parts to
 >   - analysis of performance
 > - provide counterarg + rebuttal after v1.0 proposal section
 ----
-
+> @todo use the below but do not feel obliged to keep it
+----
 ## Design Decisions Background
 
 ### Simple Decentralized Ride hailing (v0.1)
