@@ -1,45 +1,31 @@
 
 # Moov Ride Hailing Whitepaper
 
-> @todo merberich
-> I think this content deserves a hard edit before it goes live. For now, this is just a copy of the documentation as it exists on Google Drive.
-
 > This documentation is not finalized and may undergo significant rework.
 
 ## Introduction: An Overview of Transportation
 
-Transportation is essential to modern living.
+Transportation is essential to modern living. From the earliest innovations - shoes, horses, wagons, etc. - to the relatively recent innovations of railways, aeroplanes, and automobiles, humanity has always sought to improve the ease, speed, cost, and efficiency of transportation. People have a wide variety of contemporary transportation options, but they each have their own specific advantages and drawbacks.
 
-> @todo formulate these points into a cohesive intro
-- personal transportation
-  - expensive: vehicle cost, insurance, fuel, maintenance
-  - inefficient for most cases: sits in parking lot, high downtime, takes up space
-- public transportation
-  - improved space efficiency, only inactive after servce time is up
-  - typically improves cost efficiency if a ride plan is purchased
-  - fixed routes along centralized paths, no way to connect fringe locations
-  - strict timing means planning around transportation, rather than the other way around
-- taxi services
-  - resolves time efficiency by providing transportation-on-demand
-  - often expensive
-  - hard to break in to the market, monopolies/oligopolies form
-- user-owned manned fleets
-  - easier to enter market as a provider
-  - retain space and time efficiency of transportation service model
-  - suffer from lack of unified information system
-- ride hailing systems (Uber + Lyft + Waymo)
-  - retain space and time efficiency of transportation service model
-  - users cannot set their own rates
-  - with development of autonomous vehicles, human drivers will be replaced
-  - oligopoly on best performing fleet
-- public distributed ride hailing system with user-owned manned fleets
-- public distributed ride hailing system with autonomous fleets
+Personal transportation (a user-owned automotive) is perhaps the best method of meeting on-demand transportation today. Personal vehicles are limited in range only by the ability of the owner to refuel, and the existence of land to drive on. However, owning a car can be expensive - there's the base vehicle cost, insurance, fuel, regulation checks, and maintenance and registration (and these are just the personal costs). More so, personally owning a vehicle is an incredibly inefficient use of space and time. On average, personal vehicles are [parked 95% of the time](https://www.reinventingparking.org/2013/02/cars-are-parked-95-of-time-lets-check.html). Not only does this mean that car owners generally have a return of only 5% of the value of their vehicle, but there are draws on land allocation to accommodate these parked cars. For precious real estate in city centers, this can be a contentious issue. Lastly, personal vehicles tend to depreciate in value quite rapidly.
 
-Overall, review benefits of [Transportation as a Service](https://en.wikipedia.org/wiki/Transportation_as_a_Service) model, then transition into:
+Directly contrasting the concept of personally-owned vehicles is the notion of [Transportation as a Service (TaaS)](https://en.wikipedia.org/wiki/Transportation_as_a_Service) in which transportation is provided by an external entity. Transportation services can come in several forms.
+
+Public transportation is one expression of TaaS which greatly improves on the space and time efficiency of the vehicle - buses, trams, and railways tend to serve routes all day, unless in need of maintenance. In addition, most municipalities offer ride plans that reduce the overall cost of transportation when taken frequently; compared to personal vehicles, public transportation is quite inexpensive, yielding [high savings](http://www.apta.com/mediacenter/pressreleases/2017/Pages/June-Transit-Savings.aspx) in cities with strong services. Naturally, public transportation has disadvantages. For one, bus and railway routes are fixed along centralized paths without any way to connect to fringe locations. Thise looking to access the periphery of a town would need to walk from the closest stop on the route. In addition, public transportation often follows strict timing, meaning the transprotation-on-demand of a personal vehicle is lost with this service.
+
+Taxi services are another alternative. Taxis retain transportation-on-demand, but are often relatively expensive solutions that are designed for single, infrequent trips. In addition, taxi services often have [local monopolies due to regulation](https://www.cagw.org/thewastewatcher/and-medallion-goes-%E2%80%A6-taxicab-monopoly) which drives up the difficulty of breaking into the market as a new driver or service provider. Therefore drivers cannot set their own rates, and are at the whim of the singular stewarding company.
+
+The most recent addition to available transportation methods are the "rideshare" services, most notably Lyft and Uber. These services perform very similarly to taxi services, however they also provide a set of other integrated services including ride-hailing and tracking, and electronic payment via phone apps (we will refer to this set of services simply as the ride hailing stack). The primary advantage of these providers is ease of interfacing - all relevant information is bundled into once place. However, like the taxi services, drivers employed by these centralized services cannot set their own rates, and are reliant on the ride hailing stack offered by the steward companies. This means that drivers and riders alike are still potentially subject to oligopolistic conditions in the long term using this transportation method. In addition, these technologies do not exist in a vacuum; with the advent and rising popularity of autonomous vehicles, it is likely that rideshare companies will eventually move to automated fleets, further building conditions making market entry difficult.
+
+We believe that another solution can be developed that takes the best features of all of the noted transportation methods.
+
+## The Proposal
 
 > @todo the statement below require heavy citation of sources incidating increasing autonomous vehicle saturation of roads
 
 ... Specifically, we worry that in transitioning from Uber and Lyft's user-owned but centrally-stewarded TaaS to a TaaS operated by autonomous fleets, public vehicle providers lose the ability to compete in the market. With a select few companies owning larger and larger percentages of vehicles on the road, this could result in an oligopoly.
+
+- public distributed ride hailing system with user-owned manned fleets -> autonomous fleets
 
 > @todo follownig par needs revision; succinct and unambiguous description of proposal
 
@@ -47,7 +33,7 @@ However, a more ideal form of transportation system ownership may logically exis
 
 ~~In yesterday’s world there were individual taxi services that coordinated rides between riders and taxi drivers. In today’s world we have Uber and Lyft, who have fully automated ride coordination but as an unfortunate consequence own the entire marketplace. Though people are paying significantly less today than they were with yesterday’s slower taxi services, this oligopolization will allow Uber and Lyft to charge artificially high brokerage margins and not prioritize user satisfaction or new innovations.~~
 
-## Background: Services Supporting Transportation
+## Background: Supporting Services
 
 > @todo rephrase, but basically this
 
