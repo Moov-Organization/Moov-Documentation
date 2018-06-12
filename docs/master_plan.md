@@ -1,11 +1,11 @@
 # MOOV Master Plan
-The goals of Moov organisation(non-profit) are
+The goals of the Moov organization are to
 1. Decentralize ride hailing market
 2. Open source self driving car technology
 
 #### Why?
 So our customers can save money by not having to
-- Pay a central entity, like Uber, commission to find rides.
+- Pay a central entity, like Uber, high commission to find rides.
 - Pay owners of self driving car technology, like Waymo, to use autonomous cars.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fulfillment of these goals will also stabilize the ride hailing ecosystem by distributing power  more proportionately among the market entities. For example, today Uber wields too much power in setting price for riders and wages for drivers but in a decentralized system both parties will have autonomy in setting their own prices.  
@@ -35,7 +35,7 @@ In the token model, there isn’t a centralized authority like a post office tha
 In actuality the post office in this model is a computer program running on a decentralized network of computers that is in charge of forwarding mail and transferring tokens. The benefit of this model is that ownership of the network is fully decentralized meaning there is not a central entity transferring funds, collecting commissions or setting prices. Instead it is a completely free market and the price of mailing is directly dictated by supply and demand which will inevitably result in customers paying the lowest cost possible.
 
 #### Putting it all together
-Instead of using tokens to transport mail, we will transport people. A demo of this idea is hosted [here](http://moovlab.online:8000). In this demo you can pretend to be a customer and use tokens to move from one part of the simulated world to another.
+Instead of using tokens to transport mail, we will transport people. A demo of this idea is hosted [here](http://moovlab.online). In this demo you can pretend to be a customer and use tokens to move from one part of the simulated world to another.
 1. First you will have to buy a few tokens from a mock exchange,
 2. Then you will have to make a ride request with pick up and drop off locations
 3. You will also have to attach to the request how many tokens you are willing to pay.
@@ -74,7 +74,7 @@ In the naively optimistic case, if our platform were to completely replace Uber 
 ![v0.1](assets/DecentralizedPlatform.jpg)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; There are multiple reasons for this architecture. The reason Uber is harmful for the ride hailing ecosystem is that they have complete ownership of the network, therefore they have full liberty in setting prices and seeking commissions. To prevent abuse of of such control we propose to decentralize ownership of the network by standardizing communication which will create a platform for developers to build services. And since none of the services would have a monopoly over the traffic of the network, it will lead to tight competition among them which will result in production of quality services at reduced cost to drivers and riders. This is in stark contrast to ride hailing today, that is if riders are unhappy with Uber and they switch to Lyft then they lose contact to all of Uber’s drivers. Whereas in our proposed solution if a rider is unhappy with one provider and switches another, they still have access to the entire pool of drivers. The development of open source tools for service providers will reduce costs for developers which will directly result in more money saved by end users.
-More details regarding the open protocols and open source tools can be found [here](whitepaper/index.md)
+More details regarding the open protocols and open source tools can be found [here](marketplace.md)
 
 ###### Scalability
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With 75 million active users, Uber powered about 4 billion rides in the year 2018, that is averaging about [130 rides per second][4]. Our demo is hosted on the Ethereum blockchain which can handle only about 15 transactions per second, not to forget there are hundreds of other applications competing for a slice of this transaction throughput. Therefore Ethereum blockchain as it stands is grossly insufficient to handle our transaction requirements. As more people are inducted into the transportation as a service market, our transaction requirements may reach up to several thousand per second. So we are tasked with finding a blockchain technology that can meet such a requirement.  
@@ -101,7 +101,11 @@ July 2023: Demo LNGA, the computer chip that can make any car into self driving 
 July 2024: Get safety certification of LNGA from ISO, VSC and other leading safety certifiers. Get approval from federal and state level regulators to install LNGA in cars.  
 July 2025: Start selling self driving cars with LNGA installed in them.  
 
-> @todo Legal Compliance
+MOOV alpha version: Demonstrating the open protocols and open source tools  
+MOOV beta version: Demonstrating scalable blockchain solution  
+LNGA alpha version: Custom PCB using FPGAs, micro controllers and off the   shelf OS.  
+
+> @todo Legal Compliance  
 > @todo Governance
 
 [1]: https://newsroom.intel.com/news-releases/intel-predicts-autonomous-driving-will-spur-new-passenger-economy-worth-7-trillion/
