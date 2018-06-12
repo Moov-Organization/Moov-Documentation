@@ -7,7 +7,7 @@ This is the home page for all Moov documentation.
 
 [Moov Master Plan](master_plan.md): This document outlines how to raise money to fund the development of a decentralized ride hailing marketplace as well as a computer chip that make any car into a self driving car. It also describes the high level goals and timelines of the project.
 
-[MOOV, the decentralized Ride Hailing Marketplace](whitepaper/index.md): This document describes the open protocols that will be used to decentralize the ride hailing marketplace.
+[MOOV decentralized Ride Hailing Marketplace](marketplace.md): This document describes the open protocols that will be used to decentralize the ride hailing marketplace.
 
 [LNGA, the self driving car chip](avStack.md): This document outlines the technology for the self driving car chip and the plan for its development.
 
