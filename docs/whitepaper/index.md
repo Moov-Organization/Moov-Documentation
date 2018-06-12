@@ -15,11 +15,15 @@ Public transportation is one expression of TaaS which greatly improves on the sp
 
 Taxi services are another alternative. Taxis retain transportation-on-demand, but are often relatively expensive solutions that are designed for single, infrequent trips. In addition, taxi services often have [local monopolies due to regulation](https://www.cagw.org/thewastewatcher/and-medallion-goes-%E2%80%A6-taxicab-monopoly) which drives up the difficulty of breaking into the market as a new driver or service provider. Therefore drivers cannot set their own rates, and are at the whim of the singular stewarding company.
 
-The most recent addition to available transportation methods are the "ride hailing" services, most notably Lyft and Uber. These services perform very similarly to taxi services, however they also provide a set of other integrated services including ride hailing and tracking, and electronic payment via phone apps (we will refer to this set of services simply as the ride hailing stack). The primary advantage of these providers is ease of interfacing - all relevant information is bundled into once place. However, like the taxi services, drivers employed by these centralized services cannot set their own rates, and are reliant on the ride hailing stack offered by the steward companies. This means that drivers and riders alike are still potentially subject to oligopolistic conditions in the long term using this transportation method. In addition, these technologies do not exist in a vacuum; with the advent and rising popularity of autonomous vehicles, it is likely that ride hailing companies will eventually move to automated fleets, further building conditions making market entry difficult.
+The most recent addition to available transportation methods are the "ride hailing" services, most notably Lyft and Uber. These services perform very similarly to taxi services, however they also provide a set of other integrated services including ride hailing and tracking, and electronic payment via phone apps (we will refer to this set of services simply as the ride hailing stack). In addition, these services are much less expensive than the similar taxi services. The primary advantage of these providers is ease of interfacing - all relevant information is bundled into once place. However, like the taxi services, drivers employed by these centralized services cannot set their own rates, and are reliant on the ride hailing stack offered by the steward companies. This means that drivers and riders alike are still potentially subject to oligopolistic conditions in the long term using this transportation method. In addition, these technologies do not exist in a vacuum; with the advent and rising popularity of autonomous vehicles, it is likely that ride hailing companies will eventually move to automated fleets, further building conditions making market entry difficult.
+
+> @todo Stronger problem statement here. Posit ride hailing is best system but can lead to oligopoly, and we can fix THAT problem.
 
 We believe that a more ideal transportation solution can be found, which combines the best features of all of the noted observed methods.
 
 ## Proposal of Improvements
+
+> @todo make this a design philosophy section, refactor accordingly
 
 We propose a decentralized public-stake ride hailing system with user-owned manned fleets.
 
@@ -51,26 +55,95 @@ With these qualities in mind, we can specify a protocol which would meet these s
 
 ### Architecture
 
-> @todo write me based on the "v1.0" section below
+![arch_v0_1](img/moov_rh_arch_v01.png)
+
+This model supports five core entities: the **Rider**, **Ride Manager**, **Blockchain**, **Matchmaker**, and **Car**.
+
+The Rider and Car each represent an agent which uses the public API to access the ride haling service - the rider seeks a ride, and the car provides one. These agents could be automated services themselves (ride scheduling or fleet management, for example). However, in most cases, both the Rider and Car would be human agents operating a phone app to access the service, similar to the system employed by current ride hailing services.
+
+The Blockchain, Ride Manager, and Matchmaker are therefore entities which connect Riders to Drivers, essentially replacing the existing ride hailing stack.
+
+The Ride Manager is a service provider which mainly handles two functions: (1) holding micro-auctions to select an elegible ride for a potential rider, and (2) dispatching investigations and reporting results for dispute handling.
+
+The Matchmaker is a service provider which vouches for Car agents in the micro auction process. It attempts to optimize earnings of individual Car agents by accepting appropriate bids from riders and starting the actual transaction.
+
+Lastly, the Blockchain acts as a distributed ledger of transactions, a public database of ride information, and a mechanism through which smart contract logic can enforce correct distribution of fare.
+
+### Protocol Operation
+
+The core operation of the ride hailing service can be narrowed down to a simple sequence of procedures:
+1. **Ride Selection**
+2. **Transaction Validation**
+3. **Ride**
+4. **Ride Resolution**.
+
+> @todo probably need more here, or remove this heading section altogether
+
+#### The Ride Selection Process
+
+> @todo do we need an image here?
+
+Ride Selection describes the process by which Rider agents are matched with Car agents. All protocol-specified interactions within this procedure occur over existing cloud networking technologies. Service providers are free to reference the blockchain for these operations, but should not attempt to modify state until specified by the protocol.
+
+> @todo do something with this par, needs better integration into the section
+
+Before deciding to use the system, any Rider agent selects a Ride Manager which will represent their bid. Likewise, Car agents select a Matchmaker to represent them in the open market.
+
+1. A Rider agent first contacts their selected Ride Manager indicating that they are seeking a ride, specifying pick up and drop off locations as coordinates.
+2. The selected Ride Manager replies with an estimate of ride cost, and specifies the Ride Manager fee for conducting the transaction.
+3. If the Rider agent accepts the Ride Manager fee, they authorize/sign a packet containing: pick up and drop off coordinates, maximum fare acceptable (in protocol tokens), fee to be paid out to the Ride Manager on ride match (in protocol tokens), ride request transaction hash, Rider agent blockchain address, and the Ride Manager blockchain address (authorized to conduct the transaction).
+4. The Ride Manager then verifies the alotted fee and places the Rider agent information into a bid table indexed by active ride request transaction hash, awaiting attempts to accept the bid via micro-auction.
+5. Matchmaker services which are subscribed to the Ride Manager service are pushed updates to the bid table. If an active bid meets the acceptance criteria for a Car agent (determined by matchamker-internal criterion), then the Matchmaker sends a notice accepting the bid at advertised price. The notice packet contains: transaction hash of the ride request, Car agent blockchain address, and Matchmaker blockchain address.
+6. The Ride Manager sifts through acceptance notices to match any internally-specified criterion (Car agent reputation, speed of pick up based on location, etc). If the Ride Manager recieves no acceptance notices which meet the criterion, it increments the listed bid price (up to the rider-specified maximum price). If there is persistently no acceptable taker within a timeout period, the Ride Manager aborts the request and notifies the Rider agent. If there are acceptance notices which meet the Ride Manager criterion, it selects one Car agent to handle the ride and closes the auction on the active ride request, removing the Rider bid from the bid table. Transaction validation now begins.
+
+#### Transaction Validation
+
+> @todo definition? image?
+
+1. The Ride manager authorizes/signs the start of the transaction, and sends appropriate information (service provider fees, addresses of Rider and Car, accepted fare, and signatures of Rider and Car) to the smart contract hosted on the blockchain.
+2. The smart contract verifies that the Ride Manager is authorized by the Rider, the Matchmaker is authorized by the Car, and the Rider has succifient funds to purchase the ride. If verification passes, the smart contract updates Blockchain state to indicate the beginning of the ride, and the fare and Ride Manager fee are subtracted from the Rider's blockchain wallet.
+3. The smart contract then notifies both the Ride Manager and Matchmaker of the results of the verification.
+4. The Ride Manager and Matchmaker update the Rider and Car agents, respectfully. If verification was successfully, the ride now begins.
+
+#### Ride
+
+> @todo definition? image?
+
+1. The Car agent navigates to the specified pick-up location and waits for a specified period of time. If either agent fails to appear within the specified time period, the other party can lodge a Dispute by notifying the Ride Manager, in which case the ride proceeds directly to ride resolution.
+2. If both agents arrive in a timely manner, the Car takes the Rider to the specified drop off location. At any point during this process, either agent can lodge a Dispute if unsatisfactory conditions are met. Again, lodging a Dispute immediately ends the ride and enters the ride resolution stage.
+3. When the Car arrives at the designated drop-off location, it sends a notification to the Ride Manager indicating that the ride is complete. If no Dispute has been lodged by the Car, this notification is an acceptance of transaction.
+4. The Ride Manager then prompts the Rider for accceptance of transaction.
+5. The Rider responds with either a Dispute or acceptance notice. Ride resolution then begins.
+
+#### Ride Resolution
+
+> @todo definition? image?
+
+1. The smart contract immediatly distributes fees owed to both the Ride Manager and Matchmaker service providers.
+
+For no Disputes lodged (both agents accept the ride):
+2. The smart contract immediately dispenses fare to the Car and closes the ride transaction via the Blockchain. The ride is complete.
+
+For presence of one or more Disputes lodged:
+2. The smart contract notes the dispute in the Blockchain by updating state. This state transition defers responsibility of designating distribution of fare to the Ride Manager.
+3. The Ride Manager now conducts an investigation into the Dispute(s). This investigation may occur through a human agency depending on the Ride manager's dispute handling policy, and therefore fare may rest on the blockchain for some time unti the investigation concludes.
+4. The Ride Manager completes the investigation and indicates to the smart contract how distribution of fare should occur, exacting a fee for dispute handling.
+5. The smart contract dispenses fare between the parties as designated by the Ride Manager and closes the ride transaction via the Blockchain. The ride is complete.
+
+### Interface Specifications
+
+> @todo for this section
+- [ ] explanation of handles for new functionality
+- [ ] definitions of interface specifications
+- [ ] theoretical performance analysis
 
 ----
-> @todo continue editing below this line:
-> - design decisions could use trimming
-> - reduce size of images, use XML-generated images from something like draw.io
-> - revise v1.0 for service-oriented descriptions and make sure new system jives
-> - consider removing sections below v1.0 section; extraneous or should be moved to business/values doc
+> @todo future sections
+- [ ] obstacles and rebuttals
+- [ ] summary
+- [ ] additional reading and appendices
 
-> - cut down on content in v0.1-0.4 and move info to rebuttals section(s)
-> - provide user-friendly blog as intro to tech, hand-holding
-> - v1.0 section should list:
->   - definitions of service provider entities
->   - operation chain of the protocol at large
->   - definitions of message formats for all external interfaces (to user/driver and blockchain)
->   - optionally, message formats for internal systems as well
->   - analysis of performance
-> - provide counterarg + rebuttal after v1.0 proposal section
-----
-> @todo use the below but do not feel obliged to keep it
+> @todo consider removing sections below "v1.0" section; extraneous or should be moved to business/values doc
 ----
 ## Design Decisions Background
 
