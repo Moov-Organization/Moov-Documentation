@@ -89,9 +89,20 @@ Ride Selection describes the process by which Rider agents are matched with Car 
 
 Before deciding to use the system, any Rider agent selects a Ride Manager which will represent their bid. Likewise, Car agents select a Matchmaker to represent them in the open market.
 
+> @todo in initial Rider auth packet add
+>   - expiration timestamp for request if not handled properly (handed in smart contract)
+>   - safety deposit amount (for dispute or negligence handling)
+
+> @todo think about future ride scheduling through proto
+> @todo think about serving diff priorities (time vs cost vs privacy) on Rider side
+
+> @todo don't call things Rider 'agents' or Car 'agents', too confusing, remove references to 'agent'
+
+> @todo mechanism for Car to authorize Matchmaker at start of ride (request notice?)
+
 1. A Rider agent first contacts their selected Ride Manager indicating that they are seeking a ride, specifying pick up and drop off locations as coordinates.
 2. The selected Ride Manager replies with an estimate of ride cost, and specifies the Ride Manager fee for conducting the transaction.
-3. If the Rider agent accepts the Ride Manager fee, they authorize/sign a packet containing: pick up and drop off coordinates, maximum fare acceptable (in protocol tokens), fee to be paid out to the Ride Manager on ride match (in protocol tokens), ride request transaction hash, Rider agent blockchain address, and the Ride Manager blockchain address (authorized to conduct the transaction).
+3. If the Rider agent accepts the Ride Manager fee, they authorize/sign a packet containing: pick up and drop off coordinates, maximum fare acceptable (in protocol tokens), fee to be paid out to the Ride Manager on ride match (in protocol tokens),  transaction hash, Rider agent blockchain address, and the Ride Manager blockchain address (authorized to conduct the transaction).
 4. The Ride Manager then verifies the alotted fee and places the Rider agent information into a bid table indexed by active ride request transaction hash, awaiting attempts to accept the bid via micro-auction.
 5. Matchmaker services which are subscribed to the Ride Manager service are pushed updates to the bid table. If an active bid meets the acceptance criteria for a Car agent (determined by matchamker-internal criterion), then the Matchmaker sends a notice accepting the bid at advertised price. The notice packet contains: transaction hash of the ride request, Car agent blockchain address, and Matchmaker blockchain address.
 6. The Ride Manager sifts through acceptance notices to match any internally-specified criterion (Car agent reputation, speed of pick up based on location, etc). If the Ride Manager recieves no acceptance notices which meet the criterion, it increments the listed bid price (up to the rider-specified maximum price). If there is persistently no acceptable taker within a timeout period, the Ride Manager aborts the request and notifies the Rider agent. If there are acceptance notices which meet the Ride Manager criterion, it selects one Car agent to handle the ride and closes the auction on the active ride request, removing the Rider bid from the bid table. Transaction validation now begins.
@@ -111,9 +122,9 @@ Before deciding to use the system, any Rider agent selects a Ride Manager which 
 
 1. The Car agent navigates to the specified pick-up location and waits for a specified period of time. If either agent fails to appear within the specified time period, the other party can lodge a Dispute by notifying the Ride Manager, in which case the ride proceeds directly to ride resolution.
 2. If both agents arrive in a timely manner, the Car takes the Rider to the specified drop off location. At any point during this process, either agent can lodge a Dispute if unsatisfactory conditions are met. Again, lodging a Dispute immediately ends the ride and enters the ride resolution stage.
-3. When the Car arrives at the designated drop-off location, it sends a notification to the Ride Manager indicating that the ride is complete. If no Dispute has been lodged by the Car, this notification is an acceptance of transaction.
+3. When the Car arrives at the designated drop-off location, it sends a signed notification to the Ride Manager indicating that the ride is complete. If no Dispute has been lodged by the Car, this notification is an acceptance of transaction.
 4. The Ride Manager then prompts the Rider for accceptance of transaction.
-5. The Rider responds with either a Dispute or acceptance notice. Ride resolution then begins.
+5. The Rider responds with a signed Dispute notice or signed acceptance notice. If the Rider does not respond with a signed notice within a one day period, the Ride Manager treats the Rider as having accepted the ride (smart contract will note the timeout timestamps instead of referring to Rider signed notification). Ride resolution then begins.
 
 #### Ride Resolution
 
@@ -126,16 +137,18 @@ For no Disputes lodged (both agents accept the ride):
 
 For presence of one or more Disputes lodged:
 2. The smart contract notes the dispute in the Blockchain by updating state. This state transition defers responsibility of designating distribution of fare to the Ride Manager.
-3. The Ride Manager now conducts an investigation into the Dispute(s). This investigation may occur through a human agency depending on the Ride manager's dispute handling policy, and therefore fare may rest on the blockchain for some time unti the investigation concludes.
-4. The Ride Manager completes the investigation and indicates to the smart contract how distribution of fare should occur, exacting a fee for dispute handling.
+3. The Ride Manager now conducts an investigation into the Dispute(s). This investigation may occur through a human agency depending on the Ride manager's dispute handling policy, and therefore fare may rest on the blockchain for some time until the investigation concludes.
+4. The Ride Manager completes the investigation and indicates to the smart contract how distribution of fare should occur, exacting a smart contract-specified fixed percentage fee for dispute handling. The smart contract specifies that fare and safty deposit can only be distributed to either the Rider or Car address, to prevent bad behavior on the Ride Manager's part.
 5. The smart contract dispenses fare between the parties as designated by the Ride Manager and closes the ride transaction via the Blockchain. The ride is complete.
 
 ### Interface Specifications
 
 > @todo for this section
-- [ ] explanation of handles for new functionality
+- [ ] explanation of handles for functionality outside of core features
 - [ ] definitions of interface specifications
 - [ ] theoretical performance analysis
+
+> @todo future-facing goals (potentially long-term): scheduling and pooling rides, multi-transit, delivery service
 
 ----
 > @todo future sections
