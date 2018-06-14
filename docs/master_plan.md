@@ -103,7 +103,7 @@ July 2025: Start selling self driving cars with LNGA installed in them.
 
 MOOV alpha version: Demonstrating the open protocols and open source tools  
 MOOV beta version: Demonstrating scalable blockchain solution  
-LNGA alpha version: Custom PCB using FPGAs, micro controllers and off the   shelf OS.  
+LNGA alpha version: Custom PCB using FPGAs, micro controllers and off the   shelf RTOS.  
 
 > @todo Legal Compliance  
 > @todo Governance

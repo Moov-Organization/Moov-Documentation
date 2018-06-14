@@ -5,7 +5,7 @@ To dissolve this oligopoly, it is necessary to understand the different parts to
 1. Driver Identity checks and Vehicle Inspections.
 2. Public facing servers for users and drivers to connect with each other.
 3. Phone apps for drivers and riders to communicate with servers.
-4. Software to match drivers and riders and perform price point negotiation.
+4. Software to match drivers and riders.
 5. Software to decide the cost of a ride.
 6. Payment processing and escrow.
 7. Handling disputes and rider/driver reputation.
@@ -106,5 +106,14 @@ We will develop a suite of open source software that will make it easy for devel
 4. An open source version of a machine learning algorithm that mines through the aggregated ride request data and predicts future ride requests heat map.
 5. An open source version of a AI credit rater which goes through the trove of available information and gives each rider and driver a rating.
 6. An open source version of the matchmaker which will use 3, 4 & 5 in conjunction with its internal AI software to find the best matches for its drivers.
-7. An open source version of the app drivers will use to connect with the matchmaker.
+7. An open source version of the app drivers will use to connect with the matchmaker.  
 All these open sourced tools will significantly lower the entry for anyone to become one of the service providers in our ecosystem, thus increasing the adoption rate of our protocol.
+
+---------------------------------------------------------------------------
+
+#### Long Term Goals
+- Support for pooling
+- Support for scheduled rides
+- Support for multi transit rides
+- Support for integrating with public transit
+- Support for moving goods like food, laundry, mail
