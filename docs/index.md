@@ -3,13 +3,13 @@
 
 This is the home page for all Moov documentation.
 
-[Mission Statement](mission.md): This document explains why we are doing what we are doing.
+[Mission Statement ___(Why)___](mission.md) This document explains the motive for the creation of the Moov Organization.
 
-[Moov Master Plan](master_plan.md): This document outlines how to raise money to fund the development of a decentralized ride hailing marketplace as well as a computer chip that make any car into a self driving car. It also describes the high level goals and timelines of the project.
+[Moov Business Plan ___(How)___](master_plan.md): This document outlines the plan to fund the development of a decentralized ride hailing marketplace as well as a computer chip that make any car into a self driving car. It also describes the high level goals and timelines of the project.
 
-[MOOV decentralized Ride Hailing Marketplace](marketplace.md): This document describes the open protocols that will be used to decentralize the ride hailing marketplace.
+[MOOV decentralized Ride Hailing Marketplace ___(What)___](marketplace.md): This document describes the open protocols that will be used to decentralize the ride hailing marketplace.
 
-[LNGA, the self driving car chip](avStack.md): This document outlines the technology for the self driving car chip and the plan for its development.
+[LNGA, the self driving car chip ___(What)___](avStack.md): This document outlines the technology for the self driving car chip and the plan for its development.
 
 [Demo](http://moovlab.online): This is a link to the prototype built to demonstrate how a decentralized ride hailing marketplace will work with self driving cars. [Demo w/o blockchain](http://test.moovlab.online)
 
