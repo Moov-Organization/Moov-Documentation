@@ -1,5 +1,11 @@
 # Moov Organization Mission Statement
 
+> GOAL OF THIS DOCUMENT: "connect" with employees, support crowdfunding campaign, connect with public
+
+> @todo possibly more pathos, more accessible language (fewer large words), cut out needless verbage
+
+> @todo VERY STRONG core message
+
 At this moment some of the largest problems plaguing our society are wealth inequality and income inequality.
 - The top 20 percent of US households own more than 84 percent of the wealth while the bottom 40 percent combine for a paltry 0.3 percent.<sup>[1][1]</sup>
 - About 47 percent of all new income ends up with the top 10 percent of the labor market, while only 13 percent reaches the bottom 50 percent.<sup>[2][2]</sup>
@@ -9,6 +15,8 @@ At this moment some of the largest problems plaguing our society are wealth ineq
 Historically, widening income and wealth disparity drive political disenfranchisement, and ultimately an unstable and unproductive society.
 
 So long as capitalism remains the prevailing economic model, society will continue to march towards safer, less expensive, and more efficient solutions. Automation and narrow artificial intelligence replacing human labor is no exception. We are already witnessing the introduction of AI in the areas of transportation, medical diagnosis & prescription, shipping, surveillance, farming, cooking, senior care, cashiering, legal consultation and many more. Based on current economic trends these AI services will be owned by a few people and at the same time replace millions of human workers. This will only further the wealth and income gap as the owners of these AI services collect even larger stakes of the produced wealth while the replaced workers receive little or none.
+
+> @todo explain what "this trend" is below
 
 So how do we reverse this trend? Barring direct political intervention, we need to address the underlying issue: *the oligopoly of a select few producers*.
 
@@ -24,6 +32,8 @@ Our mission as the Moov Organization is to dissolve oligopolies in the transport
 - Public stake in transportation systems can be maintained through direct, decentralized ownership of vehicles, even in a service-oriented system.
 
 For information on how we plan to enact these solutions, see our [development plan](master_plan.md), [ride hailing market whitepaper](whitepaper/index.md), and [autonomous vehicle stack whitepaper](avStack.md).
+
+> @todo a MUCH STRONGER future vision here, perhaps a place for some pathos
 
 The benefits of dissolving oligopolies are clear: easier participation by providers in the market, better profit margins for direct providers, and reduced costs to end consumers. We envision a decentralized marketplace where, by standard, entities do not have the ability to monopolize service. Only when we ensure that the public retains a majority stake in our own economic system can the public reap the benefits of technological advancement. Perhaps then we could start using artificial intelligence as a tool to promote public gain, rather than further the interests of the few.
 
