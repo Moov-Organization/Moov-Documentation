@@ -51,7 +51,9 @@ Lastly, the system should not force any significant additional complexity on the
 
 With these qualities in mind, we can specify a protocol which would meet these system demands.
 
-## Moov Ride Hailing System Specification (v0.1)
+## Moov Ride Hailing System Specification (v0.1.0)
+
+This specification follows the [Semantic Versioning](https://semver.org/) specification. Changes to this specification are therefore reflected in the spec's version number according to the SemVer rules. Current version number is listed in this heading title.
 
 ### Architecture
 
