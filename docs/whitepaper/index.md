@@ -3,6 +3,8 @@
 
 > This documentation is not finalized and may undergo significant rework.
 
+> @todo re-format, assume reader familiarity, more terse, get to spec sooner
+
 ## Introduction: An Overview of Transportation
 
 Transportation is essential to modern living. From the earliest innovations - shoes, horses, wagons, etc. - to the relatively recent innovations of railways, airplanes, and automobiles, humanity has always sought to improve the ease, speed, cost, and efficiency of transportation. People have a wide variety of contemporary transportation options, but they each have their own specific advantages and drawbacks.
@@ -21,9 +23,9 @@ The most recent addition to available transportation methods are the "ride haili
 
 We believe that a more ideal transportation solution can be found, which combines the best features of all of the noted observed methods.
 
-## Proposal of Improvements
+> @todo this section is _huge_ and should be pared down to focus on the spec
 
-> @todo make this a design philosophy section, refactor accordingly
+## Proposal of Improvements
 
 We propose a decentralized public-stake ride hailing system with user-owned manned fleets.
 
@@ -114,7 +116,7 @@ Before deciding to use the system, any Rider agent selects a Ride Manager which 
 > @todo definition? image?
 
 1. The Ride manager authorizes/signs the start of the transaction, and sends appropriate information (service provider fees, addresses of Rider and Car, accepted fare, and signatures of Rider and Car) to the smart contract hosted on the blockchain.
-2. The smart contract verifies that the Ride Manager is authorized by the Rider, the Matchmaker is authorized by the Car, and the Rider has sufficent funds to purchase the ride. If verification passes, the smart contract updates Blockchain state to indicate the beginning of the ride, and the fare and Ride Manager fee are subtracted from the Rider's blockchain wallet.
+2. The smart contract verifies that the Ride Manager is authorized by the Rider, the Matchmaker is authorized by the Car, and the Rider has sufficient funds to purchase the ride. If verification passes, the smart contract updates Blockchain state to indicate the beginning of the ride, and the fare and Ride Manager fee are subtracted from the Rider's blockchain wallet.
 3. The smart contract then notifies both the Ride Manager and Matchmaker of the results of the verification.
 4. The Ride Manager and Matchmaker update the Rider and Car agents, respectfully. If verification was successfully, the ride now begins.
 
@@ -125,22 +127,24 @@ Before deciding to use the system, any Rider agent selects a Ride Manager which 
 1. The Car agent navigates to the specified pick-up location and waits for a specified period of time. If either agent fails to appear within the specified time period, the other party can lodge a Dispute by notifying the Ride Manager, in which case the ride proceeds directly to ride resolution.
 2. If both agents arrive in a timely manner, the Car takes the Rider to the specified drop off location. At any point during this process, either agent can lodge a Dispute if unsatisfactory conditions are met. Again, lodging a Dispute immediately ends the ride and enters the ride resolution stage.
 3. When the Car arrives at the designated drop-off location, it sends a signed notification to the Ride Manager indicating that the ride is complete. If no Dispute has been lodged by the Car, this notification is an acceptance of transaction.
-4. The Ride Manager then prompts the Rider for accceptance of transaction.
+4. The Ride Manager then prompts the Rider for acceptance of transaction.
 5. The Rider responds with a signed Dispute notice or signed acceptance notice. If the Rider does not respond with a signed notice within a one day period, the Ride Manager treats the Rider as having accepted the ride (smart contract will note the timeout timestamps instead of referring to Rider signed notification). Ride resolution then begins.
 
 #### Ride Resolution
 
 > @todo definition? image?
 
-1. The smart contract immediatly distributes fees owed to both the Ride Manager and Matchmaker service providers.
+1. The smart contract immediately distributes fees owed to both the Ride Manager and Matchmaker service providers.
 
 For no Disputes lodged (both agents accept the ride):
+
 2. The smart contract immediately dispenses fare to the Car and closes the ride transaction via the Blockchain. The ride is complete.
 
 For presence of one or more Disputes lodged:
+
 2. The smart contract notes the dispute in the Blockchain by updating state. This state transition defers responsibility of designating distribution of fare to the Ride Manager.
 3. The Ride Manager now conducts an investigation into the Dispute(s). This investigation may occur through a human agency depending on the Ride manager's dispute handling policy, and therefore fare may rest on the blockchain for some time until the investigation concludes.
-4. The Ride Manager completes the investigation and indicates to the smart contract how distribution of fare should occur, exacting a smart contract-specified fixed percentage fee for dispute handling. The smart contract specifies that fare and safty deposit can only be distributed to either the Rider or Car address, to prevent bad behavior on the Ride Manager's part.
+4. The Ride Manager completes the investigation and indicates to the smart contract how distribution of fare should occur, exacting a smart contract-specified fixed percentage fee for dispute handling. The smart contract specifies that fare and safety deposit can only be distributed to either the Rider or Car address, to prevent bad behavior on the Ride Manager's part.
 5. The smart contract dispenses fare between the parties as designated by the Ride Manager and closes the ride transaction via the Blockchain. The ride is complete.
 
 ### Interface Specifications
